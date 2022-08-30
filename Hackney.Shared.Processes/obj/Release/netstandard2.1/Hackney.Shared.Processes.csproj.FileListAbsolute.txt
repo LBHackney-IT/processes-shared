@@ -1,0 +1,10 @@
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/bin/Release/netstandard2.1/Hackney.Shared.Processes.deps.json
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/bin/Release/netstandard2.1/Hackney.Shared.Processes.dll
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/bin/Release/netstandard2.1/Hackney.Shared.Processes.pdb
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.csproj.AssemblyReference.cache
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.GeneratedMSBuildEditorConfig.editorconfig
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.AssemblyInfoInputs.cache
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.AssemblyInfo.cs
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.csproj.CoreCompileInputs.cache
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.dll
+/Users/raymitchell/Desktop/processes-api-shared/Hackney.Shared.Processes/obj/Release/netstandard2.1/Hackney.Shared.Processes.pdb
