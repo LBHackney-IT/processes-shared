@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Hackney.Shared.Processes.Tests
+build_property.ProjectDir = /Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/

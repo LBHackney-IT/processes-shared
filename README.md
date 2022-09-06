@@ -1,6 +1,6 @@
 # Hackney.Shared.Processes
 At Hackney, we have created NuGet Packages to prevent the duplication of common code when implementing our APIs.
-This NuGet package will store the shared code related to the processes api domain that can then be used in the relevant projects.
+This NuGet package will store the shared code related to the processes domain that can then be used in the relevant projects.
 
 ## Using the package
 For full details on how to use the package(s) within this repository please read 
