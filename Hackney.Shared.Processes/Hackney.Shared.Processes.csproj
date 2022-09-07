@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>Hackney.Shared.Processes</PackageId>
     <RepositoryUrl>https://github.com/LBHackney-IT/processes-shared</RepositoryUrl>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
     <Authors>London Borough of Hackney</Authors>
     <Company>London Borough of Hackney</Company>
     <Copyright>2021</Copyright>
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hackney.Core.DynamoDb" Version="1.30.0" />
-    <PackageReference Include="Hackney.Core.Http" Version="1.73.0-feat-patch-api-g0004" />
+    <PackageReference Include="Hackney.Core.Http" Version="1.70.0" />
     <PackageReference Include="Hackney.Core.JWT" Version="1.72.0" />
     <PackageReference Include="Hackney.Core.Logging" Version="1.49.0" />
     <PackageReference Include="Hackney.Core.Sns" Version="1.52.0" />
