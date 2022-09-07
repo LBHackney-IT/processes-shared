@@ -8288,20 +8288,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/ray/.nuget/packages/": {}
+    "/Users/raymitchell/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/Hackney.Shared.Processes.Tests.csproj",
+      "projectUniqueName": "/Users/raymitchell/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/Hackney.Shared.Processes.Tests.csproj",
       "projectName": "Hackney.Shared.Processes.Tests",
-      "projectPath": "/Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/Hackney.Shared.Processes.Tests.csproj",
-      "packagesPath": "/Users/ray/.nuget/packages/",
-      "outputPath": "/Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/obj/",
+      "projectPath": "/Users/raymitchell/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/Hackney.Shared.Processes.Tests.csproj",
+      "packagesPath": "/Users/raymitchell/.nuget/packages/",
+      "outputPath": "/Users/raymitchell/RiderProjects/processes-shared/Hackney.Shared.Processes.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ray/RiderProjects/processes-shared/NuGet.Config",
-        "/Users/ray/.nuget/NuGet/NuGet.Config"
+        "/Users/raymitchell/RiderProjects/processes-shared/NuGet.Config",
+        "/Users/raymitchell/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8314,8 +8314,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "/Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes/Hackney.Shared.Processes.csproj": {
-              "projectPath": "/Users/ray/RiderProjects/processes-shared/Hackney.Shared.Processes/Hackney.Shared.Processes.csproj"
+            "/Users/raymitchell/RiderProjects/processes-shared/Hackney.Shared.Processes/Hackney.Shared.Processes.csproj": {
+              "projectPath": "/Users/raymitchell/RiderProjects/processes-shared/Hackney.Shared.Processes/Hackney.Shared.Processes.csproj"
             }
           }
         }
@@ -8369,16 +8369,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
