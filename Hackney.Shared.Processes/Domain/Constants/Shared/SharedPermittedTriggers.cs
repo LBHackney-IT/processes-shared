@@ -1,4 +1,4 @@
-namespace Hackney.Shared.Processes.Constants
+namespace Hackney.Shared.Processes.Domain.Constants
 {
     public static class SharedPermittedTriggers
     {

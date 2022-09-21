@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Hackney.Shared.Processes.Constants.ChangeOfName
+namespace Hackney.Shared.Processes.Domain.Constants.ChangeOfName
 {
     // NOTE: Key values must be camelCase to avoid issues with Json Serialiser in E2E tests
     [SuppressMessage("ReSharper", "InconsistentNaming")]

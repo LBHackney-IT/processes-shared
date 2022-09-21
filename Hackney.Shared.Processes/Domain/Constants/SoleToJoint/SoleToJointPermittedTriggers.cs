@@ -1,4 +1,4 @@
-namespace Hackney.Shared.Processes.Constants.SoleToJoint
+namespace Hackney.Shared.Processes.Domain.Constants.SoleToJoint
 {
     public static class SoleToJointPermittedTriggers
     {

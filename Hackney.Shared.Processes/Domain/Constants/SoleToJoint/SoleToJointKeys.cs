@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Hackney.Shared.Processes.Constants.SoleToJoint
+namespace Hackney.Shared.Processes.Domain.Constants.SoleToJoint
 {
     // NOTE: Key values must be camelCase to avoid issues with Json Serialiser in E2E tests
     [SuppressMessage("ReSharper", "InconsistentNaming")]

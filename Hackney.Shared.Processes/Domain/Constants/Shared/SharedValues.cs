@@ -1,4 +1,4 @@
-namespace Hackney.Shared.Processes.Constants.Shared
+namespace Hackney.Shared.Processes.Domain.Constants.Shared
 {
     public class SharedValues
     {
