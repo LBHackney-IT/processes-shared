@@ -1,6 +1,6 @@
-namespace Hackney.Shared.Processes.Infrastructure.JWT
+namespace Hackney.Shared.Processes.Sns
 {
-    public class ProcessEventConstants
+    public class EventConstants
     {
         public const string V1_VERSION = "v1";
         public const string SOURCE_DOMAIN = "Processes";
