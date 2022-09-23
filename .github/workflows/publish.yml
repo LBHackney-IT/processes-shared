@@ -68,7 +68,7 @@ jobs:
     needs: build-and-test
     env:
       VERSION: ${{ needs.build-and-test.outputs.version }}
-      LBHPACKAGESTOKEN: ${{secrets.LBHPACKAGESTOKEN }}
+      NUGET_DEPLOY_KEY: ${{secrets.NUGET_DEPLOY_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -77,4 +77,4 @@ jobs:
       - name: Publish the Package
         run: |
           cd Hackney.Shared.Processes/bin/Release
-          dotnet nuget push Hackney.Shared.Processes.*.nupkg -s https://nuget.pkg.github.com/LBHackney-IT/index.json --api-key ${{secrets.NUGET_KEY }}
+          dotnet nuget push Hackney.Shared.Processes.*.nupkg -s https://nuget.pkg.github.com/LBHackney-IT/index.json --api-key ${{secrets.NUGET_DEPLOY_KEY }}
