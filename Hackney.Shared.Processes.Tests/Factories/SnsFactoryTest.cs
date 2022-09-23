@@ -66,7 +66,7 @@ namespace Hackney.Shared.Processes.Tests.Factories
         {
             var processId = Guid.NewGuid();
             var processUpdatedResult = _fixture.Create<UpdateEntityResult<ProcessState>>();
-            
+
             var message = processUpdatedResult.CreateProcessUpdatedEvent(processId, _token);
 
             ValidateMessageData(message, processId, EventConstants.PROCESS_UPDATED_EVENT);
@@ -77,7 +77,7 @@ namespace Hackney.Shared.Processes.Tests.Factories
         public void CanCreateCreateProcessStateUpdatedEvent()
         {
             var trigger = _fixture.Create<ProcessTrigger>();
-            var stateData = _fixture.Create<Dictionary<string,object>>();
+            var stateData = _fixture.Create<Dictionary<string, object>>();
             var eventType = "SOME_EVENT_TYPE";
             var transition = new StateMachine<string, string>.Transition("some-initial-state",
                                                                          "some-destination-state",
@@ -87,7 +87,7 @@ namespace Hackney.Shared.Processes.Tests.Factories
             var message = transition.CreateProcessStateUpdatedEvent(stateData, eventType, _token);
 
             ValidateMessageData(message, trigger.Id, eventType);
-            
+
             (message.EventData.OldData as ProcessStateChangeData).State.Should().Be(transition.Source);
             var newData = message.EventData.NewData as ProcessStateChangeData;
             newData.State.Should().Be(transition.Destination);

@@ -65,7 +65,9 @@ jobs:
   publish-package:
     name: Publish Package
     runs-on: ubuntu-latest
-    needs: build-and-test
+    needs:
+     - build-and-test
+     - check-code-formatting
     env:
       VERSION: ${{ needs.build-and-test.outputs.version }}
       NUGET_DEPLOY_KEY: ${{secrets.NUGET_DEPLOY_KEY }}
