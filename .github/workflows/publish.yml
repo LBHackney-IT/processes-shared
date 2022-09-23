@@ -70,6 +70,7 @@ jobs:
      - check-code-formatting
     env:
       VERSION: ${{ needs.build-and-test.outputs.version }}
+      LBHPACKAGESTOKEN: ${{secrets.LBHPACKAGESTOKEN }}
       NUGET_DEPLOY_KEY: ${{secrets.NUGET_DEPLOY_KEY }}
     steps:
       - name: Checkout
