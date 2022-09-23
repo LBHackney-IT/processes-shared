@@ -54,7 +54,7 @@ namespace Hackney.Shared.Processes.Factories
             };
         }
 
-        public static EntityEventSns ProcessUpdated(this UpdateEntityResult<ProcessState> updateResult, Guid id, Token token)
+        public static EntityEventSns CreateProcessUpdatedEvent(this UpdateEntityResult<ProcessState> updateResult, Guid id, Token token)
         {
             return new EntityEventSns
             {
@@ -79,10 +79,10 @@ namespace Hackney.Shared.Processes.Factories
             };
         }
 
-        public static EntityEventSns ProcessStateUpdated(this Stateless.StateMachine<string, string>.Transition transition,
+        public static EntityEventSns CreateProcessStateUpdatedEvent(this Stateless.StateMachine<string, string>.Transition transition,
                                                          Dictionary<string, object> stateData,
-                                                         Token token,
-                                                         string eventType)
+                                                         string eventType,
+                                                         Token token)
         {
             var triggerData = transition.Parameters[0] as ProcessTrigger;
 
