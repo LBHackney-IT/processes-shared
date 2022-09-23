@@ -7,7 +7,7 @@ namespace Hackney.Shared.Processes.Domain
         public Guid Id { get; set; }
         public TargetType TargetType { get; set; }
 
-        public SubType SubType { get; set; }
+        public SubType? SubType { get; set; }
         public string Description { get; set; }
 
     }
