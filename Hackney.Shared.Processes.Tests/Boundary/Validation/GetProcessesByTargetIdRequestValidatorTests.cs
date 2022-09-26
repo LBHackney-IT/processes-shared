@@ -30,7 +30,7 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         public void RequestShouldErrorWithEmptyTargetId()
         {
             //Arrange
-            var query = new GetProcessesByTargetIdRequest() { TargetId = Guid.Empty };
+            var query = new GetProcessesByTargetIdRequest { TargetId = Guid.Empty };
             //Act
             var result = _classUnderTest.TestValidate(query);
             //Assert
@@ -41,7 +41,7 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         public void RequestShouldNotErrorWithValidTargetId()
         {
             //Arrange
-            var query = new GetProcessesByTargetIdRequest() { TargetId = Guid.NewGuid() };
+            var query = new GetProcessesByTargetIdRequest { TargetId = Guid.NewGuid() };
             //Act
             var result = _classUnderTest.TestValidate(query);
             //Assert

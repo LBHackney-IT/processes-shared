@@ -7,6 +7,7 @@ namespace Hackney.Shared.Processes.Boundary.Request.Validation
     {
         public ProcessQueryValidator()
         {
+            RuleFor(x => x.ProcessName).IsInEnum();
             RuleFor(x => x.Id).NotNull()
                               .NotEqual(Guid.Empty);
         }
