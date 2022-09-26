@@ -41,8 +41,12 @@ namespace Hackney.Shared.Processes.Domain
 
         public static Process Create(Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment)
         {
-
             return new Process(Guid.NewGuid(), targetId, targetType, relatedEntities, processName, null, new List<ProcessState>(), null, patchAssignment);
+        }
+
+        public static Process Create(Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName)
+        {
+            return new Process(Guid.NewGuid(), targetId, targetType, relatedEntities, processName, null, new List<ProcessState>(), null, null);
         }
     }
 }
