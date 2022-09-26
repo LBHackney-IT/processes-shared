@@ -14,6 +14,7 @@ namespace Hackney.Shared.Processes.Factories
                 TargetType = entity.TargetType,
                 RelatedEntities = entity.RelatedEntities,
                 ProcessName = entity.ProcessName,
+                PatchAssignment = entity.PatchAssignment,
                 CurrentState = entity.CurrentState,
                 PreviousStates = entity.PreviousStates,
                 VersionNumber = entity.VersionNumber
@@ -29,6 +30,7 @@ namespace Hackney.Shared.Processes.Factories
                 TargetType = entity.TargetType,
                 RelatedEntities = entity.RelatedEntities,
                 ProcessName = entity.ProcessName,
+                PatchAssignment = entity.PatchAssignment,
                 CurrentState = entity.CurrentState,
                 PreviousStates = entity.PreviousStates,
                 VersionNumber = entity.VersionNumber

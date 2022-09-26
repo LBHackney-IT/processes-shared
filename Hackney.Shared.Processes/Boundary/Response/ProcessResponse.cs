@@ -11,6 +11,7 @@ namespace Hackney.Shared.Processes.Boundary.Response
         public TargetType TargetType { get; set; }
         public List<RelatedEntity> RelatedEntities { get; set; }
         public ProcessName ProcessName { get; set; }
+        public PatchAssignment PatchAssignment { get; set; }
         public ProcessState CurrentState { get; set; }
         public List<ProcessState> PreviousStates { get; set; }
     }

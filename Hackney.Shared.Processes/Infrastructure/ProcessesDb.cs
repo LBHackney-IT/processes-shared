@@ -24,6 +24,9 @@ namespace Hackney.Shared.Processes.Infrastructure
         [DynamoDBProperty(Converter = typeof(DynamoDbEnumConverter<ProcessName>))]
         public ProcessName ProcessName { get; set; }
 
+        [DynamoDBProperty(Converter = typeof(DynamoDbObjectConverter<PatchAssignment>))]
+        public PatchAssignment PatchAssignment { get; set; }
+
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectListConverter<RelatedEntity>))]
         public List<RelatedEntity> RelatedEntities { get; set; }
 
