@@ -7,7 +7,8 @@ namespace Hackney.Shared.Processes.Boundary.Request.Validation
     {
         public GetProcessesByTargetIdRequestValidator()
         {
-            RuleFor(x => x.TargetId).NotNull().NotEqual(Guid.Empty);
+            RuleFor(x => x.TargetId).NotNull()
+                                    .NotEqual(Guid.Empty);
         }
     }
 }

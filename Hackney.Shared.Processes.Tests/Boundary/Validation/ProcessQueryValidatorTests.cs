@@ -9,8 +9,6 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
     public class ProcessQueryValidatorTests
     {
         private readonly ProcessQueryValidator _classUnderTest;
-        private const string ValueWithTags = "sdfsdf<sometag>";
-
 
         public ProcessQueryValidatorTests()
         {
@@ -32,7 +30,7 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         public void RequestShouldErrorWithEmptyId()
         {
             //Arrange
-            var query = new ProcessQuery() { Id = Guid.Empty };
+            var query = new ProcessQuery { Id = Guid.Empty };
             //Act
             var result = _classUnderTest.TestValidate(query);
             //Assert

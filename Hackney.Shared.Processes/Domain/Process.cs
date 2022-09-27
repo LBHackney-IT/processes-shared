@@ -11,13 +11,14 @@ namespace Hackney.Shared.Processes.Domain
         public TargetType TargetType { get; set; }
         public List<RelatedEntity> RelatedEntities { get; set; }
         public ProcessName ProcessName { get; set; }
+        public PatchAssignment PatchAssignment { get; set; }
         public ProcessState CurrentState { get; set; }
         public List<ProcessState> PreviousStates { get; set; }
         public int? VersionNumber { get; set; }
 
         public Process() { }
 
-        public Process(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, ProcessState currentState, List<ProcessState> previousStates, int? versionNumber)
+        public Process(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, ProcessState currentState, List<ProcessState> previousStates, int? versionNumber, PatchAssignment patchAssignment)
         {
             Id = id;
             TargetId = targetId;
@@ -27,6 +28,7 @@ namespace Hackney.Shared.Processes.Domain
             CurrentState = currentState;
             PreviousStates = previousStates;
             VersionNumber = versionNumber;
+            PatchAssignment = patchAssignment;
         }
 
         public Task AddState(ProcessState updatedState)
@@ -37,10 +39,14 @@ namespace Hackney.Shared.Processes.Domain
             return Task.CompletedTask;
         }
 
+        public static Process Create(Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment)
+        {
+            return new Process(Guid.NewGuid(), targetId, targetType, relatedEntities, processName, null, new List<ProcessState>(), null, patchAssignment);
+        }
+
         public static Process Create(Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName)
         {
-
-            return new Process(Guid.NewGuid(), targetId, targetType, relatedEntities, processName, null, new List<ProcessState>(), null);
+            return new Process(Guid.NewGuid(), targetId, targetType, relatedEntities, processName, null, new List<ProcessState>(), null, null);
         }
     }
 }

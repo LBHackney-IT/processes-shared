@@ -17,6 +17,7 @@ namespace Hackney.Shared.Processes.Factories
                 TargetType = domain.TargetType,
                 RelatedEntities = domain.RelatedEntities,
                 ProcessName = domain.ProcessName,
+                PatchAssignment = domain.PatchAssignment,
                 CurrentState = domain.CurrentState,
                 PreviousStates = domain.PreviousStates
             };

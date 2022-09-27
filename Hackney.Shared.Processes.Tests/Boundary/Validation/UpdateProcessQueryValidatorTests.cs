@@ -32,7 +32,7 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         public void RequestShouldErrorWithEmptyId()
         {
             //Arrange
-            var query = new UpdateProcessQuery() { Id = Guid.Empty };
+            var query = new UpdateProcessQuery { Id = Guid.Empty };
             //Act
             var result = _classUnderTest.TestValidate(query);
             //Assert
@@ -43,7 +43,18 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         public void RequestShouldErrorWithNullProcessTrigger()
         {
             //Arrange
-            var model = new UpdateProcessQuery() { ProcessTrigger = null };
+            var model = new UpdateProcessQuery { ProcessTrigger = null };
+            //Act
+            var result = _classUnderTest.TestValidate(model);
+            //Assert
+            result.ShouldHaveValidationErrorFor(x => x.ProcessTrigger);
+        }
+
+        [Fact]
+        public void RequestShouldErrorWithHarmfulProcessTrigger()
+        {
+            //Arrange
+            var model = new UpdateProcessQuery { ProcessTrigger = "<string with tags>" };
             //Act
             var result = _classUnderTest.TestValidate(model);
             //Assert
@@ -55,7 +66,7 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation
         {
             //Arrange
             string processTrigger = "some-trigger";
-            var model = new UpdateProcessQuery() { ProcessTrigger = processTrigger };
+            var model = new UpdateProcessQuery { ProcessTrigger = processTrigger };
             //Act
             var result = _classUnderTest.TestValidate(model);
             //Assert

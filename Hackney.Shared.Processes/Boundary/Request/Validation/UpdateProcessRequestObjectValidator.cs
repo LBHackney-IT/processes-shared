@@ -8,8 +8,8 @@ namespace Hackney.Shared.Processes.Boundary.Request.Validation
         public UpdateProcessRequestObjectValidator()
         {
             RuleFor(x => x.FormData).NotNull();
-            RuleForEach(x => x.Documents).NotNull()
-                                         .NotEqual(Guid.Empty);
+            RuleFor(x => x.FormData).SetValidator(new FormDataValidator());
+            RuleForEach(x => x.Documents).NotEqual(Guid.Empty);
         }
     }
 }
