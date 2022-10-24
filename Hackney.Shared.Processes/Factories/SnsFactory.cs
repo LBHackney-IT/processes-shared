@@ -5,6 +5,7 @@ using Hackney.Shared.Processes.Infrastructure;
 using Hackney.Shared.Processes.Sns;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Hackney.Shared.Processes.Factories
 {
@@ -80,6 +81,7 @@ namespace Hackney.Shared.Processes.Factories
         }
 
         public static EntityEventSns CreateProcessStateUpdatedEvent(this Stateless.StateMachine<string, string>.Transition transition,
+                                                         DateTime stateStartedAt,
                                                          Dictionary<string, object> stateData,
                                                          string eventType,
                                                          Token token)
@@ -105,7 +107,8 @@ namespace Hackney.Shared.Processes.Factories
                     NewData = new ProcessStateChangeData
                     {
                         State = transition.Destination,
-                        StateData = stateData
+                        StateData = stateData,
+                        StateStartedAt = stateStartedAt
                     }
                 },
                 User = new User
