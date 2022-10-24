@@ -78,13 +78,14 @@ namespace Hackney.Shared.Processes.Tests.Factories
         {
             var trigger = _fixture.Create<ProcessTrigger>();
             var stateData = _fixture.Create<Dictionary<string, object>>();
+            var stateCreatedAt = DateTime.UtcNow;
             var eventType = "SOME_EVENT_TYPE";
             var transition = new StateMachine<string, string>.Transition("some-initial-state",
                                                                          "some-destination-state",
                                                                          "some-trigger",
                                                                          new object[] { trigger });
 
-            var message = transition.CreateProcessStateUpdatedEvent(stateData, eventType, _token);
+            var message = transition.CreateProcessStateUpdatedEvent(stateCreatedAt, stateData, eventType, _token);
 
             ValidateMessageData(message, trigger.Id, eventType);
 
