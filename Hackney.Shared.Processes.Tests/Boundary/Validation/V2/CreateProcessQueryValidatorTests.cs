@@ -1,3 +1,4 @@
+using AutoFixture;
 using FluentValidation.TestHelper;
 using Hackney.Shared.Processes.Boundary.Request.V2;
 using Hackney.Shared.Processes.Boundary.Request.V2.Validation;
@@ -11,10 +12,12 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation.V2
     public class CreateProcessQueryValidatorTests
     {
         private readonly CreateProcessQueryValidator _classUnderTest;
+        private Fixture _fixture;
 
         public CreateProcessQueryValidatorTests()
         {
             _classUnderTest = new CreateProcessQueryValidator();
+            _fixture = new Fixture();
         }
 
         [Fact]
@@ -57,6 +60,45 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation.V2
             var query = new CreateProcess
             {
                 RelatedEntities = new List<RelatedEntity>()
+            };
+            //Act
+            var result = _classUnderTest.TestValidate(query);
+            //Assert
+            result.ShouldHaveValidationErrorFor(x => x.RelatedEntities);
+        }
+
+        [Fact]
+        public void RequestShouldErrorWithRelatedEntitiesThatDoesNotContainAllTargetTypes()
+        {
+            //Arrange
+            var query = new CreateProcess
+            {
+                RelatedEntities = new List<RelatedEntity>
+                {
+                    _fixture.Build<RelatedEntity>().With(x => x.TargetType, TargetType.asset).Create(),
+                    _fixture.Build<RelatedEntity>().With(x => x.TargetType, TargetType.tenure).Create(),
+                }
+            };
+            //Act
+            var result = _classUnderTest.TestValidate(query);
+            //Assert
+            result.ShouldHaveValidationErrorFor(x => x.RelatedEntities);
+        }
+
+        [Fact]
+        public void RequestShouldErrorWithRelatedEntitiesThatDoesNotContainTargetId()
+        {
+            //Arrange
+            var query = new CreateProcess
+            {
+                TargetId = Guid.NewGuid(),
+                TargetType = TargetType.person,
+                RelatedEntities = new List<RelatedEntity>
+                {
+                    _fixture.Build<RelatedEntity>().With(x => x.TargetType, TargetType.asset).Create(),
+                    _fixture.Build<RelatedEntity>().With(x => x.TargetType, TargetType.tenure).Create(),
+                    _fixture.Build<RelatedEntity>().With(x => x.TargetType, TargetType.person).With(x => x.Id, Guid.NewGuid()).Create(),
+                }
             };
             //Act
             var result = _classUnderTest.TestValidate(query);

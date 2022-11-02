@@ -5,7 +5,6 @@ using Hackney.Shared.Processes.Infrastructure;
 using Hackney.Shared.Processes.Sns;
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace Hackney.Shared.Processes.Factories
 {
