@@ -1,3 +1,4 @@
+using AutoFixture;
 using FluentValidation.TestHelper;
 using Hackney.Shared.Processes.Boundary.Request.V2;
 using Hackney.Shared.Processes.Boundary.Request.V2.Validation;
@@ -11,10 +12,12 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation.V2
     public class CreateProcessQueryValidatorTests
     {
         private readonly CreateProcessQueryValidator _classUnderTest;
+        private Fixture _fixture;
 
         public CreateProcessQueryValidatorTests()
         {
             _classUnderTest = new CreateProcessQueryValidator();
+            _fixture = new Fixture();
         }
 
         [Fact]
@@ -37,31 +40,6 @@ namespace Hackney.Shared.Processes.Tests.Boundary.Validation.V2
             var result = _classUnderTest.TestValidate(query);
             //Assert
             result.ShouldHaveValidationErrorFor(x => x.TargetId);
-        }
-
-        [Fact]
-        public void RequestShouldErrorWithNullRelatedEntities()
-        {
-            //Arrange
-            var query = new CreateProcess();
-            //Act
-            var result = _classUnderTest.TestValidate(query);
-            //Assert
-            result.ShouldHaveValidationErrorFor(x => x.RelatedEntities);
-        }
-
-        [Fact]
-        public void RequestShouldErrorWithEmptyRelatedEntities()
-        {
-            //Arrange
-            var query = new CreateProcess
-            {
-                RelatedEntities = new List<RelatedEntity>()
-            };
-            //Act
-            var result = _classUnderTest.TestValidate(query);
-            //Assert
-            result.ShouldHaveValidationErrorFor(x => x.RelatedEntities);
         }
 
         [Fact]
